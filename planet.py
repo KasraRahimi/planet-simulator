@@ -4,7 +4,7 @@ class Planet:
     G = 6.6743e-11
     planets = []  # lists of planets that keep track of each one
 
-    def __init__(self, color, mass, x, y, dx, dy, radius=5):
+    def __init__(self, color, mass, x, y, dx=0, dy=0, radius=5):
         # assigning all the properties a planet needs
         self.color = color
         self.mass = mass
