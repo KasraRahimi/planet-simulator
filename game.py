@@ -47,7 +47,7 @@ def main():
             pygame.draw.circle(screen, entity.color, (x, y), entity.radius)
             if len(entity.orbit) > 1:
                 orbit = realToGameCoor(entity.orbit)
-                pygame.draw.lines(screen, entity.color, False, orbit, 2)
+                pygame.draw.lines(screen, entity.color, False, orbit, 1)
             entity.updatePosition()
         
         pygame.display.update()
