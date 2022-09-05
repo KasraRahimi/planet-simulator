@@ -72,4 +72,8 @@ class Planet:
         self.dy += self.ddy * self.timestep
         self.x += self.dx * self.timestep
         self.y += self.dy * self.timestep
-        self.orbit.append((self.x, self.y))
+        if len(self.orbit) < 120:
+            self.orbit.append((self.x, self.y))
+        else:
+            del self.orbit[0]
+            self.orbit.append((self.x, self.y))
