@@ -11,8 +11,17 @@ def main():
     pygame.display.set_caption("Planet simulation")
 
     scale = planet.Planet.scale
-    earth = planet.Planet(blue, 5.972e24, W/(2*scale), H/(2*scale), radius=20)
-    moon = planet.Planet(grey, 7.348e22, W/(2*scale), 384.4e6 + H/(2*scale), 1022)
+    earth = planet.Planet(blue, 
+                        5.972e24, 
+                        W/(2*scale), 
+                        H/(2*scale), 
+                        radius=6371e3 * 10 * scale)
+    moon = planet.Planet(grey, 
+                        7.348e22, 
+                        W/(2*scale), 
+                        384.4e6 + H/(2*scale), 
+                        1022, 
+                        radius=1737e3 * 10 * scale)
 
     running = True
     while running:
