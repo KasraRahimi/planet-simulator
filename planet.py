@@ -1,6 +1,6 @@
 class Planet:
     scale = 3 / 1e7
-    timestep = 60 * 60 * 3
+    timestep = 60 * 60
     G = 6.6743e-11
     planets = []  # lists of planets that keep track of each one
 
