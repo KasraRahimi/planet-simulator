@@ -1,0 +1,2 @@
+# Planet Simulator :ringed_planet:
+This repository is a challenge I've given myself. I watched [this video](https://youtu.be/WTLPmUHTPqo) a couple months back and managed to get a functional game. After a long break from python, I've decided to recreate this simulation without consulting the video. In other words, I'm challenging myself to code a similar simulator without help.
