@@ -1,5 +1,17 @@
 import pygame, planet
 
+def realToGameCoor(orbitalPoints):
+    #  this function will take all the orbital
+    #  points of a planet and output that same
+    #  list as coordinates pygame can understand
+    output = []
+    scale = planet.Planet.scale
+    for coordinate in orbitalPoints:
+        x = coordinate[0] * scale
+        y = coordinate[1] * scale
+        output.append((x, y))
+    return output
+
 def main():
     blue = (30, 42, 156)
     grey = (59, 59, 64)
@@ -33,6 +45,9 @@ def main():
             x = entity.x * scale
             y = entity.y * scale
             pygame.draw.circle(screen, entity.color, (x, y), entity.radius)
+            if len(entity.orbit) > 1:
+                orbit = realToGameCoor(entity.orbit)
+                pygame.draw.lines(screen, entity.color, False, orbit, 2)
             entity.updatePosition()
         
         pygame.display.update()
