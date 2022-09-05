@@ -40,12 +40,12 @@ class Planet:
         # or as a vector
         m1 = self.mass
         m2 = other.mass
-        r = self.calculateDistance(self, other)
+        r = self.calculateDistance(other)
         fg = (self.G * m1 * m2) / r**2  # My buddy Issac taught me this one ;)
         if vector:
             # soh cah toa go brrr
-            deltax, deltay = self.calculateDistance(self, other)
-            hypotenuse = self.calculateDistance(self, other)
+            deltax, deltay = self.calculateDistance(other, True)
+            hypotenuse = self.calculateDistance(other)
             return fg * (deltax/hypotenuse), fg * (deltay/hypotenuse)
         else:
             return fg
@@ -62,8 +62,8 @@ class Planet:
             if entity == self:
                 continue
             else:
-                fx += self.calculateForce(self, entity, True)[0]
-                fy += self.calculateForce(self, entity, True)[1]
+                fx += self.calculateForce(entity, True)[0]
+                fy += self.calculateForce(entity, True)[1]
         self.ddx = fx / self.mass # thank you, Issac!
         self.ddy = fy / self.mass
         self.dx += self.ddx * self.timestep
