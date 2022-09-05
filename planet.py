@@ -16,6 +16,8 @@ class Planet:
         self.ddx = 0  # derivative of speed (i.e. acceleration)
         self.ddy = 0  # derivative of speed (i.e. acceleration)
         self.planets.append(self)
+        self.orbit = []  # a list of points in the planet's orbit
+        # to be able to display it in game
     
     @property
     def speed(self):
@@ -70,3 +72,4 @@ class Planet:
         self.dy += self.ddy * self.timestep
         self.x += self.dx * self.timestep
         self.y += self.dy * self.timestep
+        self.orbit.append((self.x, self.y))
