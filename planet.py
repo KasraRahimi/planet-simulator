@@ -1,6 +1,6 @@
 class Planet:
-    scale = 3 / 1e7
-    timestep = 60 * 60
+    scale = 1 / 1e9
+    timestep = 60 * 60 * 24
     G = 6.6743e-11
     planets = []  # lists of planets that keep track of each one
 
@@ -72,7 +72,7 @@ class Planet:
         self.dy += self.ddy * self.timestep
         self.x += self.dx * self.timestep
         self.y += self.dy * self.timestep
-        if len(self.orbit) < 120:
+        if len(self.orbit) < 240:
             self.orbit.append((self.x, self.y))
         else:
             del self.orbit[0]
